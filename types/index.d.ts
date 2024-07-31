@@ -24,7 +24,20 @@ declare namespace Cypress {
         thresholdType: "percent" | "pixels",
         resizeDevicePixelRatio: boolean
       }>,
-      screenshotConfig: Partial<ScreenshotDefaultsOptions>,
+      // Config passed to cy.screenshot
+      screenshotConfig: Partial<{
+        log: boolean;
+        blackout: Array<string>;
+        capture: 'fullPage' | 'viewport' | 'runner';
+        clip: null | { x: number, y: number, width: number, height: number };
+        disableTimersAndAnimations: boolean;
+        padding: null | number | Array<number>;
+        scale: boolean;
+        timeout: number;
+        overwrite: boolean;
+        onBeforeScreenshot: (target: Document | HTMLElement) => void;
+        onAfterScreenshot: (target: Document | HTMLElement, properties: { path: string, dimensions: any }) => void;
+      }>,
       name: string,
       separator: string
     }>): Chainable<null>;
