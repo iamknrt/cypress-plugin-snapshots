@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html).
 
 ## Releases
+
+### [1.4.5](https://github.com/suchipi/cypress-plugin-snapshots/compare/v1.4.4...v1.4.5) - 2024-07-31
+- Change peerDependencies to allow any modern Cypress version
+- Make TypeScript types work regardless of Cypress version
+- NOTE: This was published as `@suchipi/cypress-plugin-snapshots`
+
 ### [1.4.4](https://github.com/meinaart/cypress-plugin-snapshots/compare/v1.4.0...v1.4.4) - 2020-08-11
 - fixup screenshotConfig (thanks @shirotech)
 - don't start server when it is disabled (#128) (thanks @shirotech)

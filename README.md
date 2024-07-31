@@ -7,7 +7,7 @@ Fork of <https://github.com/meinaart/cypress-plugin-snapshots> with the followin
 - Its latest commits published to npm (notably, a change to the peerDependencies that makes it more broadly-compatible with Cypress versions).
 - The TypeScript types are changed to be compatible across Cypress versions.
 
-## Development notes
+## Development Notes
 
 - You have to `npm install` in both the root dir and the `cypress` dir.
 - You have to `npm start` in one terminal and `npm test` in another.
