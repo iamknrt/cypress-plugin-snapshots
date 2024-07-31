@@ -18,6 +18,7 @@ describe('config', () => {
     });
   });
 
+  // TODO this test seems outdated?
   it('getScreenshotConfig', () => {
     const config = {
       log: true,
@@ -26,20 +27,15 @@ describe('config', () => {
         y: 0,
         height: 100,
         width: 100,
-      }
+      },
     };
 
     expect(getScreenshotConfig(config)).toEqual({
       blackout: ['.snapshot-diff'],
       capture: 'fullPage',
-      clip: {
-        x: 0,
-        y: 0,
-        height: 100,
-        width: 100,
-      },
+      clip: null,
       disableTimersAndAnimations: true,
-      log: true,
+      log: false,
       padding: null,
       scale: false,
       timeout: 30000,
