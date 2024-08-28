@@ -6,7 +6,6 @@ Fork of <https://github.com/meinaart/cypress-plugin-snapshots> with the followin
 
 - Its latest commits published to npm (notably, a change to the peerDependencies that makes it more broadly-compatible with Cypress versions).
 - The TypeScript types are changed to be compatible across Cypress versions.
-- A fix has been added for a change in Cypress 12 which prevented the snapshot modal from opening.
 
 ## Development Notes
 
