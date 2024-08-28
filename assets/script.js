@@ -5,29 +5,17 @@ function closeSnapshotModal() {
 };
 
 (function () {
+  // Would be nice if we could require from taskNames here...
+  const READ_FILE = "cypress-plugin-snapshot:readFile";
+  
   function htmlEncode(subject) {
     return typeof subject === 'string' ?
         subject.replace(/</g, '&lt;').replace(/>/g, '&gt;')
       : JSON.stringify(subject, undefined, 2);
   }
 
-  // Bug: `cy.readFile` only works first time, as a fix I wrap it in a cached `Cypress.Promise`.
-  // @TODO: file a bug report about this.
   function readFile(fullPath, encoding = 'base64', options = { log: false, timeout: 2000 }) {
-    if (!Cypress.__readFileCache__) Cypress.__readFileCache__ = {};
-    if (!Cypress.__readFileCache__[encoding]) {
-      Cypress.__readFileCache__[encoding] = {};
-    }
-
-    const cache = Cypress.__readFileCache__[encoding];
-    if (!cache[fullPath]) {
-      cache[fullPath] = Cypress.Promise.resolve(cy.readFile(fullPath, encoding, options).then(result => {
-        cache[fullPath] = Cypress.Promise.resolve(result);
-        return result;
-      }));
-    }
-
-    return cache[fullPath];
+    return cy.task(READ_FILE, { filename: fullPath, encoding }, options);
   }
 
   function getImageDataUri(url) {
