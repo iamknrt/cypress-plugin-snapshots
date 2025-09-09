@@ -1,11 +1,11 @@
 {
-  "name": "@suchipi/cypress-plugin-snapshots",
-  "version": "1.4.5",
+  "name": "@mknrt/cypress-plugin-snapshots",
+  "version": "1.5.0",
   "description": "Cypress snapshot functionality for data",
-  "homepage": "https://github.com/suchipi/cypress-plugin-snapshots",
+  "homepage": "https://github.com/iamknrt/cypress-plugin-snapshots",
   "repository": {
     "type": "git",
-    "url": "https://github.com/suchipi/cypress-plugin-snapshots.git"
+    "url": "https://github.com/iamknrt/cypress-plugin-snapshots.git"
   },
   "types": "types/index.d.ts",
   "files": [
@@ -20,8 +20,11 @@
   "engines": {
     "node": ">=8.2.1"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
-    "url": "https://github.com/suchipi/cypress-plugin-snapshots/issues"
+    "url": "https://github.com/iamknrt/cypress-plugin-snapshots/issues"
   },
   "keywords": [
     "cypress",

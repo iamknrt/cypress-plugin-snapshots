@@ -1,9 +1,14 @@
-const randtoken = require('rand-token');
 const { merge, cloneDeep, clone } = require('lodash');
 const { TYPE_JSON } = require('./dataTypes');
 
-function createToken() {
-  return randtoken.generate(128);
+function createToken(length = 128) {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+  const charLength = chars.length;
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * charLength));
+  }
+  return result;
 }
 
 const DEFAULT_SCREENSHOT_CONFIG = Object.freeze({

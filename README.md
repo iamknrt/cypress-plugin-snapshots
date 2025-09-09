@@ -1,13 +1,61 @@
-# `@suchipi/cypress-plugin-snapshots`
+# `@iamknrt/cypress-plugin-snapshots`
 
-> Plugin for snapshot tests in [Cypress.io](https://www.cypress.io/).
+> Plugin for snapshot testing in [Cypress.io](https://www.cypress.io/).
 
-Fork of <https://github.com/meinaart/cypress-plugin-snapshots> with the following changes:
+## About This Project
 
-- Its latest commits published to npm (notably, a change to the peerDependencies that makes it more broadly-compatible with Cypress versions).
-- The TypeScript types are changed to be compatible across Cypress versions.
+This plugin is a fork of the original repository [meinaart/cypress-plugin-snapshots](https://github.com/meinaart/cypress-plugin-snapshots) with important improvements from [suchipi/cypress-plugin-snapshots](https://github.com/suchipi/cypress-plugin-snapshots).
 
-## Development Notes
+### Key Improvements:
 
-- You have to `npm install` in both the root dir and the `cypress` dir.
-- You have to `npm start` in one terminal and `npm test` in another.
+- **Cypress 15.1.0 Support**: The plugin has been fixed and is fully compatible with Cypress version 15.1.0
+- **Latest Updates**: The most recent commits are published to npm
+- **Cypress Compatibility**: Modified peerDependencies for better compatibility across Cypress versions
+- **TypeScript Types**: Updated types for cross-version compatibility
+
+## Installation
+
+```bash
+npm install --save-dev @iamknrt/cypress-plugin-snapshots
+```
+
+## Configuration
+
+Add the plugin to ```cypress/plugins/index.js```:
+
+```javascript
+const installSnapshots = require('@iamknrt/cypress-plugin-snapshots/plugin');
+
+module.exports = (on, config) => {
+installSnapshots(on, config);
+return config;
+};
+```
+
+Add the command to ```cypress/support/index.js```:
+
+```javascript
+import '@iamknrt/cypress-plugin-snapshots/commands';
+```
+
+## Usage
+
+```javascript
+// Compare with snapshot
+cy.get('.my-element').toMatchSnapshot();
+
+// Compare with specific snapshot name
+cy.get('.my-element').toMatchSnapshot('specific-snapshot-name');
+```
+
+## Development
+
+For development you need to:
+- Run ```npm install``` in both the root directory and the ```cypress``` directory
+- Run ```npm start``` in one terminal and ```npm test``` in another
+
+## Credits
+
+- Based on the work of [meinaart/cypress-plugin-snapshots](https://github.com/meinaart/cypress-plugin-snapshots)
+- Improvements from [suchipi/cypress-plugin-snapshots](https://github.com/suchipi/cypress-plugin-snapshots)
+- Adapted for Cypress 15.1.0
