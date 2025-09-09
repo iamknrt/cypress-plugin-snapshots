@@ -24,10 +24,10 @@ npm install --save-dev @mknrt/cypress-plugin-snapshots
 Add the plugin to ```cypress/plugins/index.js```:
 
 ```javascript
-const installSnapshots = require('@mknrt/cypress-plugin-snapshots/plugin');
+const { initPlugin } = require('@mknrt/cypress-plugin-snapshots/plugin');
 
 module.exports = (on, config) => {
-installSnapshots(on, config);
+  initPlugin(on, config);
 return config;
 };
 ```
