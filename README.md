@@ -1,4 +1,4 @@
-# `@iamknrt/cypress-plugin-snapshots`
+# `@mknrt/cypress-plugin-snapshots`
 
 > Plugin for snapshot testing in [Cypress.io](https://www.cypress.io/).
 
@@ -16,7 +16,7 @@ This plugin is a fork of the original repository [meinaart/cypress-plugin-snapsh
 ## Installation
 
 ```bash
-npm install --save-dev @iamknrt/cypress-plugin-snapshots
+npm install --save-dev @mknrt/cypress-plugin-snapshots
 ```
 
 ## Configuration
@@ -24,7 +24,7 @@ npm install --save-dev @iamknrt/cypress-plugin-snapshots
 Add the plugin to ```cypress/plugins/index.js```:
 
 ```javascript
-const installSnapshots = require('@iamknrt/cypress-plugin-snapshots/plugin');
+const installSnapshots = require('@mknrt/cypress-plugin-snapshots/plugin');
 
 module.exports = (on, config) => {
 installSnapshots(on, config);
@@ -35,7 +35,7 @@ return config;
 Add the command to ```cypress/support/index.js```:
 
 ```javascript
-import '@iamknrt/cypress-plugin-snapshots/commands';
+import '@mknrt/cypress-plugin-snapshots/commands';
 ```
 
 ## Usage
