@@ -1,3 +1,22 @@
+# Dependencies
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+.qodo/
+
+# OS
 .DS_Store
-node_modules
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Misc
+*.tgz
+.npmrc
+
+# Cypress artifacts
 /cypress/cypress/screenshots

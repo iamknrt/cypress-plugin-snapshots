@@ -1,6 +1,6 @@
 {
   "name": "@mknrt/cypress-plugin-snapshots",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Cypress snapshot functionality for data",
   "homepage": "https://github.com/iamknrt/cypress-plugin-snapshots",
   "repository": {
@@ -12,7 +12,6 @@
     "*.js",
     "*.md",
     "assets",
-    "docs",
     "LICENSE",
     "src",
     "types"

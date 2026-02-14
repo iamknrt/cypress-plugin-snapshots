@@ -12,12 +12,14 @@ const tasks = require('./src/tasks/');
  */
 function initPlugin(on, globalConfig = {
 }) {
-  const config = initConfig(globalConfig.env[CONFIG_KEY]);
+  const envConfig = globalConfig.expose?.[CONFIG_KEY] || globalConfig.env?.[CONFIG_KEY];
+  const config = initConfig(envConfig);
   initServer(config);
 
-  // Adding sub objects/keys to `Cypress.env` that don't exist in `cypress.json` doesn't work.
+  // Adding sub objects/keys to `Cypress.expose` that don't exist in config doesn't work.
   // That's why the config is stringified and parsed again in `src/utils/commands/getConfig.js#fixConfig`.
-  globalConfig.env[CONFIG_KEY] = JSON.stringify(config);
+  if (!globalConfig.expose) globalConfig.expose = {};
+  globalConfig.expose[CONFIG_KEY] = JSON.stringify(config);
 
   on('before:browser:launch', (browser = {}, launchOptions) => {
     const args = Array.isArray(launchOptions) ? launchOptions : launchOptions.args;

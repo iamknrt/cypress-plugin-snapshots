@@ -11,17 +11,17 @@ function fixConfig() {
     throw new Error('Please use from within Cypress.io');
   }
 
-  if (typeof Cypress.env(CONFIG_KEY) === 'string') {
-    Cypress.env(CONFIG_KEY, JSON.parse(Cypress.env(CONFIG_KEY)));
+  if (typeof Cypress.expose(CONFIG_KEY) === 'string') {
+    Cypress.expose(CONFIG_KEY, JSON.parse(Cypress.expose(CONFIG_KEY)));
   }
 }
 
 function getConfig() {
   fixConfig();
-  let config = Cypress.env(CONFIG_KEY);
+  let config = Cypress.expose(CONFIG_KEY);
   if (!config) {
     config = {};
-    Cypress.env(CONFIG_KEY, config);
+    Cypress.expose(CONFIG_KEY, config);
   }
 
   return config;

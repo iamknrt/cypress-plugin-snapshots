@@ -29,7 +29,7 @@ function readFile(fileType) {
 
 function initUi() {
   const $head = Cypress.$(window.parent.window.document.head);
-  const config = Cypress.env(CONFIG_KEY);
+  const config = Cypress.expose(CONFIG_KEY);
 
   if ($head.find('#cypress-plugin-snapshot').length > 0) {
     return;

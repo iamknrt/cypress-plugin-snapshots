@@ -1,5 +1,13 @@
-/node_modules/
-package-lock.json
+# package.json "files" field controls inclusions
+# This file excludes extras that might leak in
+
+__tests__/
+cypress/
+.github/
+.idea/
+.vscode/
+.qodo/
+.npmrc
 .travis.yml
-__tests__
-cypress
+package-lock.json
+*.log
